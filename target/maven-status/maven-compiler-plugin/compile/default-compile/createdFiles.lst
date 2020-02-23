@@ -1,2 +1,4 @@
-stepDefinitions/LoginStepDefinition.class
-com/own/TestRunner.class
+com/own/util/BaseDriver.class
+com/own/util/TestRunner.class
+com/own/pages/LoginPage.class
+com/own/stepdefinitions/LoginStepDefinition.class
