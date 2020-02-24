@@ -27,6 +27,7 @@ public class LoginPage extends BaseDriver {
 	}
 	
 	public String checkTitle() {
+		System.out.println(" Title Is "+driver.getTitle());
 		return driver.getTitle();
 	}
 

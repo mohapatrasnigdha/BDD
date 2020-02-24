@@ -15,7 +15,10 @@ public class BaseDriver {
 	
 	protected WebDriver driver;
 	public BaseDriver() {
-		System.setProperty("webdriver.chrome.driver", "/Users/snigdhamohapatra/Jars/chromedriver");
-		driver = new ChromeDriver();
+		if(driver == null) {//Create a Singleton instance of driver
+			System.setProperty("webdriver.chrome.driver", "/Users/snigdhamohapatra/Jars/chromedriver");
+			
+			driver = new ChromeDriver();
+		}
 	}
 }

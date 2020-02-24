@@ -11,7 +11,7 @@ import cucumber.api.java.en.When;
 
 public class LoginStepDefinition extends LoginPage {
 	
-
+	LoginPage loginpg= new LoginPage();
 	
 	@Given("^user is already on login page$")
 	public void user_is_already_on_login_page()  {
@@ -24,8 +24,8 @@ public class LoginStepDefinition extends LoginPage {
 	
 	@When("^title of login Page is Gmail$")
 	public void title_of_login_Page_is_Gmail() {
-		LoginPage pg= new LoginPage();
-		System.out.println(pg.checkTitle());
+		
+		System.out.println(loginpg.checkTitle());
 	}
 	
 	
