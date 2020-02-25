@@ -13,12 +13,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseDriver {
 
 	
-	protected WebDriver driver;
-	public BaseDriver() {
+	private static WebDriver driver =null;
+	
+	protected BaseDriver() {
+		System.out.print("");
+	}
+	public static WebDriver getDriver() {
+		
 		if(driver == null) {//Create a Singleton instance of driver
 			System.setProperty("webdriver.chrome.driver", "/Users/snigdhamohapatra/Jars/chromedriver");
 			
 			driver = new ChromeDriver();
+			
+			
 		}
+		return driver;
+		
 	}
+
+		
+	
 }

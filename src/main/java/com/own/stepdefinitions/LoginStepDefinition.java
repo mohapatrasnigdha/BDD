@@ -3,11 +3,10 @@ package com.own.stepdefinitions;
 
 
 import com.own.pages.LoginPage;
-
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 public class LoginStepDefinition extends LoginPage {
 	
@@ -15,17 +14,17 @@ public class LoginStepDefinition extends LoginPage {
 	
 	@Given("^user is already on login page$")
 	public void user_is_already_on_login_page()  {
+		//LoginPage.getDriver();
 		
-		
-		driver.get("https://gmail.com");
+		LoginPage.getDriver().get("https://gmail.com");
 		
 	   
 	}
 	
+	
 	@When("^title of login Page is Gmail$")
 	public void title_of_login_Page_is_Gmail() {
-		
-		System.out.println(loginpg.checkTitle());
+		Assert.assertEquals(loginpg.checkTitle(), "Gmail");
 	}
 	
 	
