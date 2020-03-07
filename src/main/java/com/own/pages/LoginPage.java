@@ -20,14 +20,17 @@ public class LoginPage extends BaseDriver {
 //	@FindBy (tagName ="Title")
 //	private WebElement title;
 	
+	public void launchUrl(String url) {
+		BaseDriver.getDriver().get(url);
+	}
 	
-	public void inputUserName() {
-		String username="khirodpanda4add";
-		//driver.get("")
+	public void inputUserName(String uname) {
+		
+		userName.sendKeys(uname);
 	}
 	
 	public String checkTitle() {
-		System.out.println(" Title Is "+BaseDriver.getDriver().getTitle());
+		
 		return BaseDriver.getDriver().getTitle();
 	}
 

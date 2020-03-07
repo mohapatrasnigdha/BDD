@@ -3,10 +3,12 @@ package com.own.stepdefinitions;
 
 
 import com.own.pages.LoginPage;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginStepDefinition extends LoginPage {
 	
@@ -14,14 +16,10 @@ public class LoginStepDefinition extends LoginPage {
 	
 	@Given("^user is already on login page$")
 	public void user_is_already_on_login_page()  {
-		//LoginPage.getDriver();
-		
-		LoginPage.getDriver().get("https://gmail.com");
-		
-	   
+		loginpg.launchUrl("https://gmail.com");
 	}
 	
-	
+
 	@When("^title of login Page is Gmail$")
 	public void title_of_login_Page_is_Gmail() {
 		Assert.assertEquals(loginpg.checkTitle(), "Gmail");
@@ -30,6 +28,10 @@ public class LoginStepDefinition extends LoginPage {
 	
 	@Then("^user enters username and password$")
 	public void user_enters_username_and_password() throws Throwable {
+		
+		PageFactory.initElements(LoginPage.getDriver(), LoginPage.class);
+		//read from a file 
+		loginpg.inputUserName("khirodpanda");
 	    // Write code here that turns the phrase above into concrete actions
 	   
 	}
@@ -46,6 +48,10 @@ public class LoginStepDefinition extends LoginPage {
 	   
 	}
 
-
+	@Then("^I should be happy$")
+	public void sfsfsf() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
 }

@@ -6,3 +6,4 @@ When title of login Page is Gmail
 Then user enters username and password
 Then user clicks on login button
 Then user should be on home page
+Then I should be happy
