@@ -8,7 +8,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import com.own.util.BaseDriver;
 
 public class LoginStepDefinition extends LoginPage {
 	
@@ -28,8 +30,10 @@ public class LoginStepDefinition extends LoginPage {
 	
 	@Then("^user enters username and password$")
 	public void user_enters_username_and_password() throws Throwable {
+		WebDriver driver =LoginPage.getDriver();
 		
-		PageFactory.initElements(LoginPage.getDriver(), LoginPage.class);
+		PageFactory.initElements(driver, loginpg);
+	
 		//read from a file 
 		loginpg.inputUserName("khirodpanda");
 	    // Write code here that turns the phrase above into concrete actions
